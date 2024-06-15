@@ -21,11 +21,8 @@ const FileDemo = () => {
             <Toast ref={toast}></Toast>
             <div className="col-12">
                 <div className="card">
-                    <h5>Advanced</h5>
-                    <FileUpload name="demo[]" url="/api/upload" onUpload={onUpload} multiple accept="image/*" maxFileSize={1000000} />
-
-                    <h5>Basic</h5>
-                    <FileUpload mode="basic" name="demo[]" url="/api/upload" accept="image/*" maxFileSize={1000000} onUpload={onUpload} />
+                    <h5>File receiving</h5>
+                    <FileUpload name="receiving" url="http://localhost:3001/api/upload" onUpload={onUpload} multiple maxFileSize={10000000} />
                 </div>
             </div>
         </div>

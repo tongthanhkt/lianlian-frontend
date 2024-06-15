@@ -12,13 +12,13 @@ const AppMenu = () => {
 
     const model: AppMenuItem[] = [
         {
-            label: 'Home',
-            items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' }]
+            label: 'Import dữ liêu',
+            items: [{ label: 'Data warehouse', icon: 'pi pi-fw pi-file', to: '/uikit/file' }]
         },
         {
-            label: 'UI Components',
+            label: 'Hiển thị báo cáo',
             items: [
-                { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
+                { label: 'Báo cáo doanh số', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
                 { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
                 { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
                 { label: 'Invalid State', icon: 'pi pi-fw pi-exclamation-circle', to: '/uikit/invalidstate' },
@@ -31,7 +31,7 @@ const AppMenu = () => {
                 { label: 'Media', icon: 'pi pi-fw pi-image', to: '/uikit/media' },
                 { label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/uikit/menu', preventExact: true },
                 { label: 'Message', icon: 'pi pi-fw pi-comment', to: '/uikit/message' },
-                { label: 'File', icon: 'pi pi-fw pi-file', to: '/uikit/file' },
+
                 { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/uikit/charts' },
                 { label: 'Misc', icon: 'pi pi-fw pi-circle', to: '/uikit/misc' }
             ]
