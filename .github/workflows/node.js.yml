@@ -45,3 +45,5 @@ jobs:
               run: |
                   ssh -o StrictHostKeyChecking=no ubuntu@43.207.164.70 << 'EOF'
                   EOF
+
+# rerun cicd
