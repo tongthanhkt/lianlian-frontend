@@ -1,0 +1,47 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+    Explore-GitHub-Actions:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 16 # Specify the version of Node.js you want to use
+            - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+            - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+            - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+            - name: Check out repository code
+              uses: actions/checkout@v4
+            - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+            - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+            - name: List files in the repository
+              run: |
+                  ls ${{ github.workspace }}
+            - name: Install dependency
+              run: npm install
+            - name: Build
+              run: npm run build
+            - run: echo "🍏 This job's status is ${{ job.status }}."
+            - name: rsync deployments
+              uses: burnett01/rsync-deployments@7.0.1
+              with:
+                  switches: -avzr --delete
+                  remote_path: ~/lianlian-frontend/
+                  remote_host: ${{ secrets.SSH_HOST }}
+                  remote_user: ubuntu
+                  remote_key: ${{ secrets.SSH_KEY }}
+
+            - name: Install SSH Key
+              uses: shimataro/ssh-key-action@v2
+              with:
+                  key: ${{ secrets.SSH_KEY }}
+                  known_hosts: 'unnecessary'
+
+            - name: Adding Known Hosts
+              run: ssh-keyscan -H -p 22 ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+            - name: Start application
+              run: |
+                  ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.SSH_HOST }} << 'EOF'
+                  EOF
