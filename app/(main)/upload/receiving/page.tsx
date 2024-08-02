@@ -22,7 +22,7 @@ const FileDemo = () => {
             <div className="col-12">
                 <div className="card">
                     <h5>File receiving</h5>
-                    <FileUpload name="receiving" url="http://localhost:3001/api/upload" onUpload={onUpload} multiple maxFileSize={10000000} />
+                    <FileUpload name="file" url={`${process.env.NEXT_PUBLIC_BACKEND_API}/upload_receiving`} onUpload={onUpload} multiple maxFileSize={10000000} />
                 </div>
             </div>
         </div>
