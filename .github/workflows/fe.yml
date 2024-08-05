@@ -31,7 +31,7 @@ jobs:
             - name: rsync deployments
               uses: burnett01/rsync-deployments@7.0.1
               with:
-                  switches: -avzr --delete
+                  switches: -avzr --delete-before
                   remote_path: ~/lianlian-frontend/
                   remote_host: ${{ vars.SSH_HOST }}
                   remote_user: ubuntu
