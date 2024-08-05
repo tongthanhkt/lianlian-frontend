@@ -2,13 +2,13 @@
 import { ChartData, ChartOptions } from 'chart.js';
 import { Chart } from 'primereact/chart';
 import React, { useContext, useEffect, useState } from 'react';
-import { LayoutContext } from '../../../../layout/context/layoutcontext';
+// import { LayoutContext } from '../../../../layout/context/layoutcontext';
 import type { ChartDataState, ChartOptionsState } from '@/types';
 
 const ChartDemo = () => {
     const [options, setOptions] = useState<ChartOptionsState>({});
     const [data, setChartData] = useState<ChartDataState>({});
-    const { layoutConfig } = useContext(LayoutContext);
+    // const { layoutConfig } = useContext(LayoutContext);
 
     useEffect(() => {
         const documentStyle = getComputedStyle(document.documentElement);
@@ -236,7 +236,7 @@ const ChartDemo = () => {
             polarData,
             radarData
         });
-    }, [layoutConfig]);
+    }, []);
 
     return (
         <div className="grid p-fluid">

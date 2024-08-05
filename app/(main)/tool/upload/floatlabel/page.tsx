@@ -10,7 +10,7 @@ import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { MultiSelect } from 'primereact/multiselect';
 import { useEffect, useState } from 'react';
-import { CountryService } from '../../../../demo/service/CountryService';
+// import { CountryService } from '../../../../demo/service/CountryService';
 
 const FloatLabelDemo = () => {
     const [countries, setCountries] = useState<Demo.Country[]>([]);
@@ -36,11 +36,7 @@ const FloatLabelDemo = () => {
         { name: 'Paris', code: 'PRS' }
     ];
 
-    useEffect(() => {
-        CountryService.getCountries().then((countries) => {
-            setCountries(countries);
-        });
-    }, []);
+    useEffect(() => {}, []);
 
     const searchCountry = (event: AutoCompleteCompleteEvent) => {
         const filtered = [];
