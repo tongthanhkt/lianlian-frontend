@@ -14,8 +14,8 @@ const AppMenu = () => {
         {
             label: 'Import dữ liêu data warehouse',
             items: [
-                { label: 'Receiving', icon: 'pi pi-fw pi-file', to: '/upload/receiving' },
-                { label: 'Payment', icon: 'pi pi-fw pi-file', to: '/upload/payment' }
+                { label: 'Receiving', icon: 'pi pi-fw pi-file', to: '/tool/upload/receiving' },
+                { label: 'Payment', icon: 'pi pi-fw pi-file', to: '/tool/upload/payment' }
             ]
         }
     ];
