@@ -48,6 +48,8 @@ jobs:
             - name: Start application
               run: |
                   ssh -o StrictHostKeyChecking=no ubuntu@${{vars.SSH_HOST}} << 'EOF'
+                  sudo cp -r /home/ubuntu/lianlian-frontend /var/www/
+                  pm2 restart frontend
                   EOF
 
 # rerun2 cicd
